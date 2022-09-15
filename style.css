@@ -1,0 +1,188 @@
+* {
+    /*Resetar css navegador*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./assets/bg.jpg);
+    background-image: top center;
+    /* posição da imagem de background */
+    background-size: 100%;
+    /*Largura 100% e autura automatico*/
+    background-repeat: no-repeat;
+    background-color: #121214;
+    /*Valor hexadecimal*/
+}
+
+body * {
+    font-family: 'Inter', 'sans-serif';
+    line-height: 160%;
+    /*Altura da linha*/
+}
+
+header {
+    padding-top:32px ;
+    height: 152px;
+   
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    ;
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    /*quando receber transform execute transição 3s volta escala original*/
+    transition: transform .3s;
+}
+
+
+header div:hover {
+    /*passar o mouse execute*/
+    transform: scale(1.1);
+    /*aumentar a escala da div 1.1*/
+}
+
+header div img {
+    /*100% tamanho div*/
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+
+main {
+    max-width: 580px;
+    /* tamanho maximo do main*/
+    width: 90%;
+    /*largura padrão quando o for menor que o maximo*/
+    margin: 32px auto;
+    /*32 px em cima e em baixomargin automatica nas laterais*/
+    display: grid;
+    /*desbloqueia recursos*/
+    gap: 24px;
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    ;
+    padding-top: 4px;
+    border-radius: 10px;
+    /*imagem gradiente section, caixa atras da div*/
+
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2 {
+    /*font-weight: 900;peso---- linhas comentadas 
+    porque o navedor trouxe como padrão*/
+    /*font-size: 24px;tamanho */
+    letter-spacing: -0.47px;
+    /*espaço entre letras*/
+}
+
+section p {
+    /* font-weight: 400;
+    font-size: 16px; */
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+
+}
+
+section ul {
+    display: flex;
+    /*elementos um ao lado do outro*/
+    gap: 16px;
+    /*so funciona em display flex/grid -- espaçamento entre caixas*/
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+section li {
+    list-style: none;
+}
+
+
+section ul li{
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    border-radius: 8px;
+    width: 90px;
+}
+
+.channel-list img {
+    width: 70px;
+    border: 1px solid #443E54;
+    border-radius: 50%;
+}
+
+
+
+/*animation*/
+
+header div {
+    /*nome animação--tempo animação -- delay -- puxar prop keyframes*/
+    animation: fromTop .3s .3s backwards;
+    
+}
+
+main section{
+    animation: fromBottom .7s backwards ;
+}
+
+main section:nth-child(1)
+{
+    animation-delay: .0;
+}
+main section:nth-child(2)
+{
+    animation-delay: .4s;
+}
+main section:nth-child(3)
+{
+    animation-delay: .8s;
+}
+
+
+
+/*@keyfram para iniciar -- identificador*/
+@keyframes fromTop {
+    from{   
+        opacity: 0;
+        transform:translateY(-30px);
+    }/*de -30px eixo Y*/
+    to{
+        opacity: 1;
+        transform:translateY(0)
+    }/*para 0(posição atual) eixo Y*/
+}
+
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
